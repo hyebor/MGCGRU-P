@@ -1,0 +1,48 @@
+base_dir: data/model_config
+data:
+  batch_size: 32
+  dataset_dir: D:/study/GNN/AGCGRU+DCGRU/rnn_flow-master/data/split_bj
+  dataset_name: split_bj
+  graph_pkl_filename: data/sensor_graph/adj_split_bj.pkl
+  test_batch_size: 32
+  val_batch_size: 32
+log_level: INFO
+model:
+  cl_decay_steps: 1000
+  embed_dim: 10
+  filter_type: laplacian
+  horizon: 1
+  input_dim: 1
+  l1_decay: 0
+  max_diffusion_step: 2
+  max_grad_norm: 1.0
+  num_nodes: 545
+  num_rnn_layers: 1
+  nParticle: 1
+  nParticle_test: 2
+  output_dim: 1
+  rho: 1.0
+  rnn_type: dcgru
+  rnn_units: 64
+  seq_len: 12
+  use_curriculum_learning: True
+train:
+  base_lr: 0.001
+  cost: nll
+  dropout: 0
+  epoch: 0
+  epochs: 100
+  epsilon: 0.001
+  global_step: 0
+  lr_decay_ratio: 0.9
+  max_grad_norm: 1
+  max_to_keep: 100
+  min_learning_rate: 2.0e-06
+  optimizer: adam
+  patience: 10
+  steps:
+  - 20
+  - 30
+  - 40
+  - 50
+  test_every_n_epochs: 10
